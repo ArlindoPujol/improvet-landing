@@ -307,6 +307,8 @@
     font-weight: 700;
   }
   .hero h1 .nowrap { white-space: nowrap; }
+  /* Quebras de linha customizadas para mobile (escondidas no desktop) */
+  .hero h1 .m-br { display: none; }
 
   /* Subhead */
   .hero p.subhead {
@@ -361,6 +363,11 @@
     0% { left: -100%; }
     50% { left: 100%; }
     100% { left: 100%; }
+  }
+  /* Loop infinito da faixa de credibilidade (mobile) */
+  @keyframes credentials-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
   .hero .cta > * {
     position: relative;
@@ -459,6 +466,10 @@
     color: rgba(236, 228, 219, 0.85);
   }
   .cred-item svg { color: var(--dourado); flex-shrink: 0; }
+  /* No desktop, esconde clones duplicados pelo JS (visíveis só no mobile) */
+  @media (min-width: 769px) {
+    .cred-item[aria-hidden="true"] { display: none; }
+  }
 
   /* ========== SEÇÃO 2 - PAIN IDENTIFICATION (cards premium animados) ========== */
   .pain-section {
@@ -1775,6 +1786,235 @@
     .espelho-fecho { padding: 36px 28px; }
     .qs-imagem-card { display: none; }
   }
+
+  /* ============================================================
+     ============== REFINAMENTOS MOBILE (responsivo) =============
+     ============================================================ */
+
+  /* Previne scroll horizontal em todas as telas */
+  @media (max-width: 1024px) {
+    html, body { overflow-x: hidden; }
+  }
+
+  /* ===== TABLET PORTRAIT (≤900px) ===== */
+  @media (max-width: 900px) {
+    /* Hero — overlay maior pra texto legível com bg cover */
+    .hero { padding: 56px 28px; }
+    .hero .logo { width: 130px; height: 48px; background-size: 196px auto; margin: 0 0 32px 0; }
+    .hero h1 { font-size: 32px; }
+    .hero p.subhead { font-size: 16px; margin-bottom: 28px; }
+    .hero .cta { padding: 18px 32px; width: fit-content; max-width: 100%; }
+    .hero .bullets { gap: 16px; font-size: 12.5px; flex-wrap: wrap; }
+  }
+
+  /* ===== MOBILE GRANDE (≤600px) ===== */
+  @media (max-width: 600px) {
+    /* HERO — imagem em tamanho reduzido alinhada à direita-inferior */
+    .hero {
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 56px 20px 0;
+      min-height: 108vh;
+      background:
+        /* Halo dourado — concentrado APENAS no topo da imagem (onde encontra a copy) */
+        linear-gradient(180deg,
+          transparent 0%,
+          transparent 50%,
+          rgba(207, 175, 89, 0.04) 54%,
+          rgba(207, 175, 89, 0.10) 58%,
+          rgba(207, 175, 89, 0.06) 64%,
+          transparent 72%,
+          transparent 100%),
+        /* Overlay PRETO — desaparece antes do rosto, deixa imagem limpa */
+        linear-gradient(180deg,
+          rgba(0,0,0,1) 0%,
+          rgba(0,0,0,1) 52%,
+          rgba(0,0,0,0.94) 56%,
+          rgba(0,0,0,0.78) 60%,
+          rgba(0,0,0,0.50) 64%,
+          rgba(0,0,0,0.22) 68%,
+          rgba(0,0,0,0.06) 72%,
+          rgba(0,0,0,0) 78%,
+          rgba(0,0,0,0) 95%,
+          rgba(0,0,0,0.18) 100%),
+        /* Imagem do expert */
+        url('images/ChatGPT%20Image%2018%20de%20mai.%20de%202026,%2008_30_12.png') center 100% / 100% auto no-repeat,
+        #000000;
+    }
+    .hero-text { width: 100%; max-width: 100%; }
+    .hero .logo { width: 108px; height: 40px; background-size: 162px auto; margin: 0 0 24px 0; }
+    .hero h1 { font-size: 24px; line-height: 1.25; margin-bottom: 14px; font-weight: 600; letter-spacing: -0.005em; text-wrap: initial; }
+    .hero h1 .m-br { display: inline; }
+    .hero p.subhead { font-size: 14.5px; line-height: 1.55; margin-bottom: 22px; color: rgba(236, 228, 219, 0.78); }
+    .hero .cta { width: auto; justify-content: center; padding: 13px 22px; font-size: 12.5px; gap: 8px; letter-spacing: 0.02em; }
+    .hero .cta svg { width: 14px; height: 14px; }
+    .hero .bullets { flex-direction: column; gap: 6px; margin-top: 16px; font-size: 12.5px; color: rgba(236, 228, 219, 0.7); }
+
+    /* HERO — sombra preta no TOPO da imagem (casa com fundo do hero) */
+    .hero { position: relative; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 80vw; /* alinha exatamente no topo da imagem (cuja altura ≈ 80vw para 5:4) */
+      height: 160px;
+      background: linear-gradient(
+        180deg,
+        #000000 0%,
+        rgba(0, 0, 0, 0.98) 12%,
+        rgba(0, 0, 0, 0.85) 28%,
+        rgba(0, 0, 0, 0.60) 48%,
+        rgba(0, 0, 0, 0.32) 68%,
+        rgba(0, 0, 0, 0.12) 85%,
+        transparent 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-text { position: relative; z-index: 2; }
+
+    /* FAIXA DE CREDIBILIDADE — loop horizontal infinito (marquee premium) */
+    .faixa-cred {
+      overflow: hidden;
+      position: relative;
+      padding: 16px 0;
+      width: 100%;
+    }
+    .faixa-cred .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 48px;
+      width: max-content;
+      max-width: none;
+      padding: 0 24px;
+      flex-wrap: nowrap;
+      animation: credentials-scroll 18s linear infinite;
+    }
+    .cred-item {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0;
+      border: none;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1;
+      color: rgba(236, 228, 219, 0.85);
+      letter-spacing: 0;
+    }
+    .cred-item svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: #CFAF59;
+      stroke-width: 1.6;
+      opacity: 1;
+    }
+
+    /* DOBRA 2 - PAIN */
+    .pain-section { padding: 56px 20px 40px; }
+    .pain-title { font-size: 26px; line-height: 1.25; margin-bottom: 40px; }
+    .pain-grid { grid-template-columns: 1fr; gap: 14px; max-width: 100%; }
+    .pain-card { padding: 24px 22px; min-height: auto; }
+    .pain-card p { font-size: 14px; line-height: 1.6; }
+    .pain-cta-wrapper { margin-top: 48px; }
+    .pain-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 3 - HOW */
+    .how-section { padding: 40px 20px 64px; }
+    .how-header { margin-bottom: 48px; }
+    .how-title { font-size: 26px; line-height: 1.25; }
+    .how-subtitle { font-size: 14.5px; line-height: 1.55; }
+    .how-cards { grid-template-columns: 1fr; gap: 24px; max-width: 100%; }
+    .how-card { padding: 28px 24px; }
+    .how-card h3 { font-size: 20px; }
+    .how-card p { font-size: 14px; line-height: 1.65; }
+    .how-cta-wrapper { margin-top: 40px; }
+    .how-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 4 - DEPOIMENTOS */
+    .testimonials-section { padding: 64px 0; }
+    .testimonials-container { padding: 0 16px; }
+    .testimonials-header { margin-bottom: 40px; }
+    .testimonials-title { font-size: 24px; line-height: 1.3; }
+    .testimonials-subtitle { font-size: 14.5px; padding: 0 4px; }
+    .testimonials-carousel-wrapper { gap: 4px; }
+    .carousel-arrow { width: 36px; height: 36px; }
+    .carousel-arrow svg { width: 16px; height: 16px; }
+    .testimonials-carousel { gap: 12px; padding: 4px; }
+    .testimonial-card { flex: 0 0 calc(100% - 8px); border-radius: 14px; }
+    .testimonial-image { border-radius: 14px; }
+    .testimonials-dots { margin-top: 24px; }
+    .testimonials-cta-wrapper { margin-top: 40px; padding: 0 16px; }
+    .testimonials-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 5 - FUNDADORES */
+    .founders-container { padding: 0; min-height: auto; }
+    .founders-photo-col { padding: 40px 24px 0; min-height: 360px; }
+    .founders-photo-wrapper img { max-height: 400px; }
+    .founders-content-col { padding: 24px 24px 56px; max-width: 100%; }
+    .founders-title { font-size: 26px; line-height: 1.25; }
+    .founders-attribution { font-size: 14px; margin-bottom: 28px; }
+    .founders-text { margin-bottom: 28px; }
+    .founders-text p { font-size: 14px; line-height: 1.7; }
+    .founders-signature { margin-bottom: 28px; gap: 20px; }
+    .founders-credential-name { font-size: 18px; }
+    .founders-credential-role { font-size: 10px; }
+    .founders-credential li { font-size: 12.5px; white-space: normal; }
+    .founders-cta-divider { margin-bottom: 24px; }
+    .founders-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+    .founders-watermark { font-size: 160px; right: -8vw; top: 35%; }
+
+    /* FOOTER */
+    footer { padding: 14px 16px; }
+    footer .logo { display: block; margin: 0 0 4px 0; }
+    footer .copy { display: block; }
+  }
+
+  /* ===== MOBILE PADRÃO (≤480px) ===== */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; line-height: 1.25; }
+    .hero p.subhead { font-size: 14px; line-height: 1.55; }
+    .hero .bullets { font-size: 12px; }
+    .pain-title,
+    .how-title,
+    .testimonials-title,
+    .founders-title { font-size: 22px; }
+    .pain-card { padding: 22px 18px; }
+    .how-card { padding: 24px 20px; }
+    .founders-content-col { padding: 20px 20px 48px; }
+    .founders-photo-col { padding: 32px 20px 0; }
+    .founders-watermark { font-size: 130px; right: -10vw; }
+    /* Ícones e elementos decorativos menores */
+    .how-card-number { font-size: 10px; }
+    .testimonials-carousel { padding: 4px 2px; }
+  }
+
+  /* ===== MOBILE PEQUENO (≤360px) ===== */
+  @media (max-width: 360px) {
+    .hero { padding: 40px 16px 0; }
+    .hero h1 { font-size: 20px; line-height: 1.3; }
+    .hero p.subhead { font-size: 13.5px; line-height: 1.55; }
+    .hero .cta { padding: 12px 18px; font-size: 11.5px; }
+    .hero .bullets { font-size: 11.5px; gap: 5px; }
+    .pain-section { padding: 48px 16px 32px; }
+    .how-section { padding: 32px 16px 56px; }
+    .testimonials-container { padding: 0 12px; }
+    .founders-photo-col { padding: 24px 16px 0; min-height: 300px; }
+    .founders-content-col { padding: 16px 16px 40px; }
+    .pain-title, .how-title, .testimonials-title, .founders-title { font-size: 20px; }
+    .pain-card p, .how-card p, .founders-text p { font-size: 13.5px; }
+    .pain-cta, .how-cta, .testimonials-cta, .founders-cta { padding: 16px 20px; font-size: 13px; }
+    .carousel-arrow { width: 32px; height: 32px; }
+    .carousel-arrow svg { width: 14px; height: 14px; }
+    .founders-watermark { font-size: 100px; }
+  }
 </style>
 </head>
 <body>
@@ -1785,7 +2025,7 @@
     <span class="logo" role="img" aria-label="Consultoria Imagem Dourada"></span>
 
     <h1>
-      Receba um <span class="gold">diagnóstico estratégico</span> do seu negócio e descubra como construir uma carreira <span class="gold">sólida, reconhecida e lucrativa</span> na medicina&nbsp;veterinária.
+      Receba um <span class="gold">diagnóstico estratégico</span> do seu negócio<br class="m-br"> e descubra como construir uma carreira <span class="gold">sólida, reconhecida e lucrativa</span> na medicina&nbsp;veterinária.
     </h1>
 
     <p class="subhead">
@@ -2193,6 +2433,26 @@
     window.addEventListener('resize', createDots);
 
     createDots();
+  })();
+
+  // Duplica itens da faixa de credibilidade para loop infinito perfeito em mobile
+  (function() {
+    function setupCredentialsLoop() {
+      const container = document.querySelector('.faixa-cred .container');
+      if (!container) return;
+      if (container.dataset.duplicated === 'true') return;
+      if (window.innerWidth > 768) return;
+      const items = Array.from(container.querySelectorAll('.cred-item'));
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        container.appendChild(clone);
+      });
+      container.dataset.duplicated = 'true';
+    }
+    window.addEventListener('DOMContentLoaded', setupCredentialsLoop);
+    setupCredentialsLoop();
+    window.addEventListener('resize', setupCredentialsLoop);
   })();
 </script>
 
