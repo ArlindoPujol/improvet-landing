@@ -117,9 +117,8 @@ UTM_SCRIPT = """
 
 def main():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    if ASSETS.exists():
-        shutil.rmtree(ASSETS)
-    ASSETS.mkdir(parents=True)
+    # Não apaga arquivos antigos: páginas já publicadas no construtor continuam apontando para eles
+    ASSETS.mkdir(parents=True, exist_ok=True)
 
     head_links = "\n".join(re.findall(r'<link rel="preload"[^>]*>', html))
     css = html[html.index("<style>") + 7: html.index("</style>")]
