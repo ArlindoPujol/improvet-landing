@@ -125,6 +125,7 @@ def main():
     body = html[html.index("<body>") + 6: html.index("</body>")]
     script = body[body.index("<script>"):]
     markup = body[: body.index("<script>")].strip()
+    markup = markup.removeprefix("<main>").removesuffix("</main>").strip()
 
     known = {c for attr in re.findall(r'class="([^"]+)"', markup) for c in attr.split()}
     known |= JS_CLASSES
@@ -139,8 +140,9 @@ def main():
     css, markup, head_links = (asset_re.sub(lambda m: export_asset(m.group(1), cache), x)
                                for x in (css, markup, head_links))
 
+    favicon = export_asset("favicon.png", cache)
     script = script.replace("</script>", UTM_SCRIPT + "</script>")
-    wrapped = f'<div class="improvet-lp">\n{markup}\n</div>'
+    wrapped = f'<main class="improvet-lp">\n{markup}\n</main>'
     style = f"<style>{css}</style>"
 
     embed = f"<!-- Improvet · landing page (bloco HTML para construtores) -->\n{head_links}\n{style}\n\n{wrapped}\n\n{script}\n"
@@ -153,6 +155,7 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {title}
 {desc}
+<link rel="icon" href="{favicon}" type="image/png">
 {head_links}
 {style}
 <style>html,body{{margin:0;padding:0}}</style>
