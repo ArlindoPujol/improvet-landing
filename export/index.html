@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Improvet | Sessão Diagnóstica Gratuita — Escola de Negócios para Veterinários</title>
+<meta name="description" content="Você é a melhor escolha técnica da sua região, mas continua sendo a segunda opção. Descubra em uma sessão diagnóstica gratuita o que fazer para virar essa chave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.improvet-lp {
+    --azul-escuro: #0F3C4B;
+    --azul-medio: #064E69;
+    --azul-claro: #1a5a73;
+    --dourado-escuro: #A27D16;
+    --dourado: #CFAF59;
+    --dourado-claro: #E5C977;
+    --bege: #ECE4DB;
+    --bege-quente: #F5EDE2;
+    --branco: #FFFFFF;
+    --preto-suave: #1a2429;
+    --preto-profundo: #050a0d;
+    --preto-hero: #0a141a;
+    --cinza-texto: #4A5A60;
+    --cinza-claro: #8A9499;
+    /* Hero v2 — paleta do brief (escopada via .hero) */
+    --hero-bg: #0A0A0A;
+    --hero-gold: #D4AF37;
+    --hero-gold-hover: #F4D061;
+    --hero-text-secondary: #B8B8B8;
+    --hero-cta-bg: #F5EFE0;
+  }
+
+  .improvet-lp, .improvet-lp * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .improvet-lp {
+    font-family: 'Poppins', -apple-system, sans-serif;
+    color: var(--azul-escuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: var(--bege-quente);
+  }
+
+  .improvet-lp .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .improvet-lp .container-narrow { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+  /* ========== ANIMATIONS ========== */
+  .improvet-lp .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .improvet-lp .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .improvet-lp .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .improvet-lp .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+  .improvet-lp .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; }
+
+  /* ========== ORNAMENTOS COMPARTILHADOS ========== */
+  .improvet-lp .ornamento-linha {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .improvet-lp .ornamento-linha::before, .improvet-lp .ornamento-linha::after {
+    content: "";
+    flex: 0 0 40px;
+    height: 1px;
+    background: var(--dourado);
+  }
+  .improvet-lp .ornamento-linha.center { justify-content: center; }
+  .improvet-lp .ornamento-linha.left::after { display: none; }
+  .improvet-lp .ornamento-linha span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado-escuro);
+  }
+
+  .improvet-lp .titulo-secao {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4.2vw, 52px);
+    color: var(--azul-escuro);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+  }
+  .improvet-lp .titulo-secao em {
+    font-style: italic;
+    color: var(--dourado-escuro);
+  }
+  .improvet-lp .titulo-secao .grifo {
+    color: var(--dourado-escuro);
+    position: relative;
+    display: inline-block;
+  }
+  .improvet-lp .titulo-secao .grifo::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 4px;
+    height: 8px;
+    background: rgba(207, 175, 89, 0.25);
+    z-index: -1;
+  }
+
+  .improvet-lp .subtitulo-secao {
+    font-size: 18px;
+    color: var(--cinza-texto);
+    max-width: 720px;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+  .improvet-lp .subtitulo-secao.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+  /* ========== BOTÕES ========== */
+  .improvet-lp .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-claro) 100%);
+    color: var(--azul-escuro);
+    padding: 22px 42px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3), 0 0 0 1px rgba(162, 125, 22, 0.15);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+  }
+  .improvet-lp .btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s;
+  }
+  .improvet-lp .btn-primary:hover::before { left: 100%; }
+  .improvet-lp .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(207, 175, 89, 0.4), 0 0 0 1px rgba(162, 125, 22, 0.2);
+  }
+  .improvet-lp .btn-primary svg { transition: transform 0.3s; }
+  .improvet-lp .btn-primary:hover svg { transform: translateX(4px); }
+
+  .improvet-lp .btn-dark {
+    background: var(--azul-escuro);
+    color: var(--dourado);
+    box-shadow: 0 10px 30px rgba(15, 60, 75, 0.35);
+  }
+  .improvet-lp .btn-dark:hover {
+    box-shadow: 0 16px 40px rgba(15, 60, 75, 0.45);
+  }
+  .improvet-lp .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .improvet-lp .logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+  .improvet-lp .logo-fallback {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .improvet-lp .logo-fallback-circle {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--dourado-claro), var(--dourado-escuro));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul-escuro);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(207, 175, 89, 0.3);
+  }
+  .improvet-lp .logo-fallback-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dourado);
+    font-style: italic;
+    line-height: 1;
+  }
+  .improvet-lp .logo-fallback-text .l1 { font-size: 22px; display: block; }
+  .improvet-lp .logo-fallback-text .l2 { font-size: 22px; display: block; }
+  .improvet-lp .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--dourado);
+    padding: 12px 24px;
+    border: 1.5px solid var(--dourado);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s;
+  }
+  .improvet-lp .nav-cta:hover {
+    background: var(--dourado);
+    color: var(--azul-escuro);
+    box-shadow: 0 8px 24px rgba(207, 175, 89, 0.4);
+  }
+  @keyframes ilp-shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+  /* Loop infinito da faixa de credibilidade (mobile) */
+  @keyframes ilp-credentials-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes ilp-scrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ========== FAIXA DE CREDIBILIDADE ========== */
+  .improvet-lp .faixa-cred {
+    background: var(--preto-suave);
+    color: var(--bege);
+    padding: 28px 0;
+    border-top: 1px solid rgba(207, 175, 89, 0.2);
+    border-bottom: 1px solid rgba(207, 175, 89, 0.2);
+  }
+  .improvet-lp .faixa-cred .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .improvet-lp .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(236, 228, 219, 0.85);
+  }
+  .improvet-lp .cred-item svg { color: var(--dourado); flex-shrink: 0; }
+  /* No desktop, esconde clones duplicados pelo JS (visíveis só no mobile) */
+  @media (min-width: 769px) {
+    .improvet-lp .cred-item[aria-hidden="true"] { display: none; }
+  }
+
+  /* ========== SEÇÃO 2 - PAIN IDENTIFICATION (cards premium animados) ========== */
+  .improvet-lp .pain-section {
+    position: relative;
+    margin: 0;
+    background: #ECE4DB;
+    padding: 96px 80px 32px 80px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Textura sutil tipo papel */
+  .improvet-lp .pain-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(15, 60, 75, 0.008) 2px,
+        rgba(15, 60, 75, 0.008) 4px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Linha fina dourada apenas no topo (base removida pra eliminar divisória com a próxima seção) */
+  .improvet-lp .pain-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(207, 175, 89, 0.15) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .improvet-lp .pain-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Eyebrow — centralizado, padrão da dobra 3 */
+  .improvet-lp .pain-eyebrow {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #A27D16;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+    padding: 0 50px;
+    position: relative;
+  }
+  .improvet-lp .pain-eyebrow::before, .improvet-lp .pain-eyebrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 1px;
+    background: #A27D16;
+  }
+  .improvet-lp .pain-eyebrow::before { left: 0; }
+  .improvet-lp .pain-eyebrow::after { right: 0; }
+  /* Wrapper do header para centralizar */
+  .improvet-lp .pain-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  /* Título — centralizado */
+  .improvet-lp .pain-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #0F3C4B;
+    max-width: 900px;
+    margin: 0 auto 72px auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .improvet-lp .pain-title em {
+    font-style: italic;
+    color: #A27D16;
+  }
+
+  /* Subtítulo — centralizado */
+  .improvet-lp .pain-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(15, 60, 75, 0.7);
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  /* ===== PAIN-CARDS — BORDA "COMETA" GIRANDO INFINITAMENTE ===== */
+  .improvet-lp .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: 12px 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  @property --pain-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .improvet-lp .pain-card {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 14px;
+    padding: 28px 28px 28px 28px;
+    box-shadow: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                background 0.55s ease;
+    isolation: isolate;
+    --pain-angle: 0deg;
+    animation: ilp-pain-rotate 8s linear infinite;
+  }
+  @keyframes ilp-pain-rotate {
+    to { --pain-angle: 360deg; }
+  }
+
+  /* Borda "cometa" — conic-gradient que gira em volta do card */
+  .improvet-lp .pain-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--pain-angle),
+      transparent 0deg,
+      rgba(207, 175, 89, 0.85) 20deg,
+      rgba(162, 125, 22, 0.95) 40deg,
+      rgba(207, 175, 89, 0.85) 60deg,
+      transparent 80deg,
+      transparent 180deg,
+      rgba(207, 175, 89, 0.85) 200deg,
+      rgba(162, 125, 22, 0.95) 220deg,
+      rgba(207, 175, 89, 0.85) 240deg,
+      transparent 260deg,
+      transparent 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+            mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 0 6px rgba(207, 175, 89, 0.35));
+    transition: filter 0.4s ease;
+  }
+  /* Stagger: cada card começa a rotação em um ângulo diferente — fora de sincronia */
+  .improvet-lp .pain-card:nth-child(1) { animation-delay: 0s; }
+  .improvet-lp .pain-card:nth-child(2) { animation-delay: -1.3s; }
+  .improvet-lp .pain-card:nth-child(3) { animation-delay: -2.6s; }
+  .improvet-lp .pain-card:nth-child(4) { animation-delay: -4s; }
+  .improvet-lp .pain-card:nth-child(5) { animation-delay: -5.3s; }
+  .improvet-lp .pain-card:nth-child(6) { animation-delay: -6.6s; }
+
+  /* Hover — preenche levemente o card e o cometa fica mais brilhante */
+  .improvet-lp .pain-card:hover {
+    background: rgba(255, 252, 245, 0.4);
+  }
+  .improvet-lp .pain-card:hover::before {
+    filter: drop-shadow(0 0 10px rgba(207, 175, 89, 0.6));
+  }
+  .improvet-lp .pain-card::after { content: none; }
+
+  /* Ícone — escondido */
+  .improvet-lp .pain-card .pain-icon { display: none; }
+
+  /* Fala em italic, alinhada à esquerda */
+  .improvet-lp .pain-card p {
+    position: relative;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(15, 60, 75, 0.82);
+    margin: 0;
+    font-style: italic;
+    text-align: left;
+  }
+
+  /* Animação entrada — fade + slide sequencial */
+  .improvet-lp .pain-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .improvet-lp .pain-card:nth-child(1).visible { transition-delay: 0.05s; }
+  .improvet-lp .pain-card:nth-child(2).visible { transition-delay: 0.15s; }
+  .improvet-lp .pain-card:nth-child(3).visible { transition-delay: 0.25s; }
+  .improvet-lp .pain-card:nth-child(4).visible { transition-delay: 0.35s; }
+  .improvet-lp .pain-card:nth-child(5).visible { transition-delay: 0.45s; }
+  .improvet-lp .pain-card:nth-child(6).visible { transition-delay: 0.55s; }
+
+  /* CTA centralizado abaixo dos cards */
+  .improvet-lp .pain-cta-wrapper {
+    text-align: center;
+    margin-top: 64px;
+  }
+  /* CTA da pain-section — idêntico ao .hero .cta */
+  .improvet-lp .pain-cta {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3);
+    transition: all 0.3s ease;
+  }
+  .improvet-lp .pain-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 100%
+    );
+    animation: ilp-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .improvet-lp .pain-cta > * {
+    position: relative;
+    z-index: 1;
+  }
+  .improvet-lp .pain-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(207, 175, 89, 0.45);
+  }
+  .improvet-lp .pain-cta:focus-visible {
+    outline: 2px solid #E5C977;
+    outline-offset: 3px;
+  }
+  .improvet-lp .pain-cta svg { flex-shrink: 0; color: #0F3C4B; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .improvet-lp .pain-section { padding: 64px 24px; }
+    .improvet-lp .pain-title { font-size: 28px; }
+    .improvet-lp .pain-subtitle { font-size: 15px; margin-bottom: 40px; }
+    .improvet-lp .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+    .improvet-lp .pain-card {
+      padding: 28px 24px;
+      border-radius: 14px;
+    }
+    .improvet-lp .pain-card p {
+      font-size: 14px;
+    }
+    .improvet-lp .pain-card .pain-icon { margin-bottom: 16px; }
+  }
+
+  /* ========== SEÇÃO 2 - ESPELHO ========== */
+  .improvet-lp .espelho {
+    background: var(--bege-quente);
+    padding: 120px 0;
+    position: relative;
+  }
+  .improvet-lp .espelho .ornamento-linha { justify-content: flex-start; }
+  .improvet-lp .espelho-header {
+    max-width: 760px;
+    margin-bottom: 70px;
+  }
+  .improvet-lp .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .improvet-lp .quote-card {
+    background: var(--branco);
+    padding: 36px 34px;
+    border-radius: 4px;
+    border: 1px solid rgba(207, 175, 89, 0.15);
+    box-shadow: 0 4px 20px rgba(15, 60, 75, 0.06);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .improvet-lp .quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(15, 60, 75, 0.1);
+  }
+  .improvet-lp .quote-card .aspas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    color: var(--dourado);
+    line-height: 0.5;
+    margin-bottom: 18px;
+    display: block;
+    opacity: 0.45;
+  }
+  .improvet-lp .quote-card p {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--azul-escuro);
+    font-weight: 400;
+  }
+  .improvet-lp .quote-card .quem {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--cinza-claro);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .improvet-lp .espelho-fecho {
+    margin-top: 70px;
+    padding: 50px;
+    background: var(--azul-escuro);
+    color: var(--bege);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .improvet-lp .espelho-fecho::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='0.8' fill='%23CFAF59' opacity='0.1'/></svg>");
+    background-size: 40px 40px;
+  }
+  .improvet-lp .espelho-fecho-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  .improvet-lp .espelho-fecho h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 2.8vw, 32px);
+    line-height: 1.3;
+    font-weight: 400;
+  }
+  .improvet-lp .espelho-fecho h3 .destaque { color: var(--dourado); font-style: italic; }
+
+  /* ========== SEÇÃO 3 - COMO FUNCIONA O DIAGNÓSTICO (TIMELINE VERTICAL) ========== */
+  .improvet-lp .how-section {
+    position: relative;
+    margin: 0;
+    background: #ECE4DB;
+    padding: 32px 80px 96px 80px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Textura de papel (continuidade com pain-section) */
+  .improvet-lp .how-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(15, 60, 75, 0.008) 2px,
+        rgba(15, 60, 75, 0.008) 4px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .improvet-lp .how-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .improvet-lp .how-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .improvet-lp .how-eyebrow {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #A27D16;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding: 0 50px;
+    position: relative;
+  }
+  .improvet-lp .how-eyebrow::before, .improvet-lp .how-eyebrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 1px;
+    background: #A27D16;
+  }
+  .improvet-lp .how-eyebrow::before { left: 0; }
+  .improvet-lp .how-eyebrow::after { right: 0; }
+  .improvet-lp .how-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #0F3C4B;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
+  }
+  .improvet-lp .how-title em {
+    font-style: italic;
+    color: #A27D16;
+  }
+  .improvet-lp .how-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(15, 60, 75, 0.7);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ===== HOW-CARDS — REDESIGN EDITORIAL COMPACTO ===== */
+  .improvet-lp .how-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Card — minimalista, com numeral italic em destaque */
+  .improvet-lp .how-card {
+    position: relative;
+    background: transparent;
+    border-radius: 4px;
+    padding: 32px 28px 28px 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 1;
+  }
+  /* Linha vertical dourada à esquerda (estilo "marca de capítulo") */
+  .improvet-lp .how-card::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    bottom: 28px;
+    left: 0;
+    width: 1px;
+    background: linear-gradient(180deg,
+      rgba(162, 125, 22, 0.7) 0%,
+      rgba(162, 125, 22, 0.4) 50%,
+      rgba(162, 125, 22, 0) 100%);
+    transition: background 0.5s ease, top 0.5s ease, bottom 0.5s ease;
+    z-index: 1;
+  }
+  .improvet-lp .how-card:hover::before {
+    background: linear-gradient(180deg,
+      rgba(162, 125, 22, 1) 0%,
+      rgba(162, 125, 22, 0.6) 60%,
+      rgba(162, 125, 22, 0) 100%);
+    top: 24px;
+    bottom: 20px;
+  }
+
+  /* Animação entrada */
+  .improvet-lp .how-section.in-view .how-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .improvet-lp .how-section.in-view .how-card[data-step="01"] { transition-delay: 0.05s; }
+  .improvet-lp .how-section.in-view .how-card[data-step="02"] { transition-delay: 0.2s; }
+  .improvet-lp .how-section.in-view .how-card[data-step="03"] { transition-delay: 0.35s; }
+
+
+  /* Elementos antigos — desativar */
+  .improvet-lp .how-card-icon, .improvet-lp .how-card-grid, .improvet-lp .how-card-accent, .improvet-lp .how-card-shimmer { display: none; }
+
+  /* Label ETAPA 01 */
+  .improvet-lp .how-card-number {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: #A27D16;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 3;
+  }
+  .improvet-lp .how-card-number::before { content: "ETAPA "; }
+
+  /* Título */
+  .improvet-lp .how-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #0F3C4B;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 3;
+    text-align: left;
+    text-wrap: balance;
+  }
+  .improvet-lp .how-card h3 em {
+    font-style: italic;
+    color: #A27D16;
+  }
+  /* Descrição */
+  .improvet-lp .how-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(15, 60, 75, 0.72);
+    margin: 0;
+    position: relative;
+    z-index: 3;
+    text-align: left;
+  }
+
+  /* CTA */
+  .improvet-lp .how-cta-wrapper {
+    text-align: center;
+    margin-top: 64px;
+  }
+  .improvet-lp .how-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow:
+      0 10px 40px rgba(207, 175, 89, 0.3),
+      0 0 60px rgba(207, 175, 89, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .improvet-lp .how-cta:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 15px 50px rgba(207, 175, 89, 0.45),
+      0 0 80px rgba(207, 175, 89, 0.25);
+  }
+  .improvet-lp .how-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%);
+    animation: ilp-how-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ilp-how-shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+  .improvet-lp .how-cta > * { position: relative; z-index: 1; }
+  .improvet-lp .how-cta svg { position: relative; z-index: 1; }
+  .improvet-lp .how-cta-reassurance {
+    margin-top: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(15, 60, 75, 0.55);
+    letter-spacing: 0.02em;
+  }
+
+  /* Mobile */
+  @media (max-width: 1024px) {
+    .improvet-lp .how-section { padding: 100px 40px; }
+    .improvet-lp .how-title { font-size: 36px; }
+    .improvet-lp .how-cards { gap: 16px; }
+    .improvet-lp .how-card { padding: 40px 24px 32px 24px; }
+    .improvet-lp .how-card h3 { font-size: 22px; }
+    .improvet-lp .how-card p { font-size: 14px; }
+  }
+  @media (max-width: 768px) {
+    .improvet-lp .how-section { padding: 72px 24px; }
+    .improvet-lp .how-header { margin-bottom: 64px; }
+    .improvet-lp .how-eyebrow { font-size: 11px; padding: 0 36px; }
+    .improvet-lp .how-eyebrow::before, .improvet-lp .how-eyebrow::after { width: 24px; }
+    .improvet-lp .how-title { font-size: 26px; line-height: 1.3; }
+    .improvet-lp .how-subtitle { font-size: 15px; }
+    .improvet-lp .how-cards {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .improvet-lp .how-cards::before { display: none; }
+    .improvet-lp .how-card { padding: 40px 28px 32px 28px; }
+    .improvet-lp .how-card-icon { width: 64px; height: 64px; margin-bottom: 20px; }
+    .improvet-lp .how-card h3 { font-size: 22px; white-space: normal; }
+    .improvet-lp .how-card p { font-size: 15px; }
+    .improvet-lp .how-cta-wrapper { margin-top: 48px; }
+    /* Remove destaque do card central no mobile */
+    .improvet-lp .how-section.in-view .how-card[data-step="02"] { transform: translateY(0); }
+    .improvet-lp .how-card[data-step="02"]:hover { transform: translateY(-10px); }
+  }
+
+  /* ========== SEÇÃO 3.5 - DEPOIMENTOS (CARROSSEL DE PRINTS) ========== */
+  .improvet-lp .testimonials-section {
+    position: relative;
+    margin: 0;
+    background: #1A2429;
+    padding: 96px 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Grade sutil dourada — mais visível no miolo, some nos cantos */
+  .improvet-lp .testimonials-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(207, 175, 89, 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(207, 175, 89, 0.14) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: center center;
+    mask-image: radial-gradient(ellipse 55% 50% at center, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 55% 50% at center, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Linha de luz dourada no topo */
+  .improvet-lp .testimonials-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(207, 175, 89, 0.35) 50%,
+      transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .improvet-lp .quem-somos { margin: 0; }
+  .improvet-lp .testimonials-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  /* Header */
+  .improvet-lp .testimonials-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .improvet-lp .testimonials-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 auto 20px auto;
+    letter-spacing: -0.01em;
+    max-width: 880px;
+    text-wrap: balance;
+  }
+  .improvet-lp .testimonials-title em {
+    font-style: italic;
+    color: #CFAF59;
+  }
+  .improvet-lp .testimonials-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(236, 228, 219, 0.75);
+    max-width: 620px;
+    margin: 0 auto;
+    text-wrap: pretty;
+  }
+  /* Carrossel wrapper */
+  .improvet-lp .testimonials-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  /* Setas — minimalistas */
+  .improvet-lp .carousel-arrow {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(207, 175, 89, 0.25);
+    color: rgba(207, 175, 89, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 2;
+  }
+  .improvet-lp .carousel-arrow:hover {
+    background: rgba(207, 175, 89, 0.10);
+    border-color: rgba(207, 175, 89, 0.6);
+    color: #CFAF59;
+    transform: scale(1.06);
+  }
+  /* Container do carrossel */
+  .improvet-lp .testimonials-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 8px 8px;
+    flex: 1;
+  }
+  .improvet-lp .testimonials-carousel::-webkit-scrollbar { display: none; }
+  /* Card — vidro fosco, moldura mínima */
+  .improvet-lp .testimonial-card {
+    flex: 0 0 calc((100% - 32px) / 3);
+    scroll-snap-align: start;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.5s ease,
+                border-color 0.4s ease;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border: 1px solid rgba(207, 175, 89, 0.18);
+    box-shadow: none;
+  }
+  .improvet-lp .testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(207, 175, 89, 0.45);
+    box-shadow: 0 0 28px rgba(207, 175, 89, 0.14);
+  }
+  .improvet-lp .testimonial-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .improvet-lp .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .improvet-lp .testimonial-card:hover .testimonial-image img { transform: scale(1.03); }
+  /* Bolinhas */
+  .improvet-lp .testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .improvet-lp .testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(207, 175, 89, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  .improvet-lp .testimonial-dot.active {
+    background: #CFAF59;
+    width: 28px;
+    border-radius: 100px;
+  }
+  .improvet-lp .testimonial-dot:hover { background: rgba(207, 175, 89, 0.55); }
+  /* CTA */
+  .improvet-lp .testimonials-cta-wrapper {
+    text-align: center;
+    margin-top: 64px;
+  }
+  .improvet-lp .testimonials-cta {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3);
+    transition: all 0.3s ease;
+  }
+  .improvet-lp .testimonials-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 100%
+    );
+    animation: ilp-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .improvet-lp .testimonials-cta > * { position: relative; z-index: 1; }
+  .improvet-lp .testimonials-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(207, 175, 89, 0.45);
+  }
+  .improvet-lp .testimonials-cta:focus-visible {
+    outline: 2px solid #E5C977;
+    outline-offset: 3px;
+  }
+  .improvet-lp .testimonials-cta svg { flex-shrink: 0; color: #0F3C4B; }
+  /* Responsivo */
+  @media (max-width: 1024px) {
+    .improvet-lp .testimonials-section { padding: 100px 0; }
+    .improvet-lp .testimonials-container { padding: 0 40px; }
+    .improvet-lp .testimonials-title { font-size: 36px; }
+    .improvet-lp .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
+  }
+  @media (max-width: 768px) {
+    .improvet-lp .testimonials-section { padding: 72px 0; }
+    .improvet-lp .testimonials-container { padding: 0 24px; }
+    .improvet-lp .testimonials-header { margin-bottom: 56px; }
+    .improvet-lp .testimonials-eyebrow { font-size: 11px; padding: 0 36px; }
+    .improvet-lp .testimonials-eyebrow::before, .improvet-lp .testimonials-eyebrow::after { width: 24px; }
+    .improvet-lp .testimonials-title { font-size: 26px; line-height: 1.3; }
+    .improvet-lp .testimonials-subtitle { font-size: 15px; }
+    .improvet-lp .testimonials-carousel-wrapper { gap: 8px; }
+    .improvet-lp .carousel-arrow { width: 40px; height: 40px; }
+    .improvet-lp .testimonial-card { flex: 0 0 calc(100% - 8px); }
+  }
+
+  /* ========== SEÇÃO 4 - EXPERT / FUNDADORES (EDITORIAL MAGAZINE) ========== */
+  .improvet-lp .founders-section {
+    position: relative;
+    background: #EFE6D2;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 0;
+  }
+  /* Watermark gigante "2019" em italic dourado, atrás de tudo */
+  .improvet-lp .founders-watermark {
+    position: absolute;
+    top: 50%;
+    right: -2vw;
+    transform: translateY(-50%);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(240px, 32vw, 420px);
+    line-height: 1;
+    color: rgba(162, 125, 22, 0.07);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+    white-space: nowrap;
+  }
+  /* Textura sutil de papel */
+  .improvet-lp .founders-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(15, 60, 75, 0.01) 2px, rgba(15, 60, 75, 0.01) 4px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Linha dourada superior */
+  .improvet-lp .founders-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(162, 125, 22, 0.45) 50%,
+      transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .improvet-lp .founders-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(380px, 1fr) 1.05fr;
+    align-items: end;
+    max-width: 1320px;
+    margin: 0 auto;
+    min-height: 580px;
+    padding: 0 64px;
+  }
+  /* Foto — bleed para a borda esquerda do viewport */
+  .improvet-lp .founders-photo-col {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0;
+    overflow: visible;
+  }
+  .improvet-lp .founders-photo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .improvet-lp .founders-photo-glow {
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 5%;
+    background: radial-gradient(ellipse at 60% 50%,
+      rgba(207, 175, 89, 0.28) 0%,
+      rgba(207, 175, 89, 0.10) 40%,
+      transparent 75%);
+    z-index: -1;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .improvet-lp .founders-photo-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 760px;
+    object-fit: contain;
+    object-position: bottom right;
+    display: block;
+    margin-bottom: 0;
+    filter:
+      drop-shadow(0 12px 18px rgba(15, 60, 75, 0.22))
+      drop-shadow(0 40px 60px rgba(15, 60, 75, 0.28))
+      drop-shadow(0 80px 100px rgba(15, 60, 75, 0.18));
+  }
+
+  /* Conteúdo — coluna direita */
+  .improvet-lp .founders-content-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 0 56px 64px;
+    max-width: 640px;
+    align-self: center;
+  }
+  /* Tag editorial — pequena, com travessão */
+  .improvet-lp .founders-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    color: #A27D16;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .improvet-lp .founders-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: #A27D16;
+  }
+  /* Pull-quote dramático em serif italic */
+  .improvet-lp .founders-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(34px, 3.4vw, 44px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+    color: #0F3C4B;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    position: relative;
+    padding-left: 0;
+  }
+  .improvet-lp .founders-title em {
+    font-style: italic;
+    color: #A27D16;
+  }
+  /* Aspa italic decorativa antes do título */
+  .improvet-lp .founders-title::before {
+    content: "\201C";
+    font-family: 'DM Serif Display', serif;
+    color: rgba(162, 125, 22, 0.35);
+    font-size: 1.5em;
+    line-height: 0;
+    margin-right: 4px;
+    position: relative;
+    top: 0.18em;
+  }
+  /* Atribuição editorial sob o pull-quote */
+  .improvet-lp .founders-attribution {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #A27D16;
+    margin: 0 0 40px 0;
+    letter-spacing: 0.01em;
+  }
+  .improvet-lp .founders-text {
+    margin-bottom: 40px;
+    max-width: 540px;
+  }
+  .improvet-lp .founders-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(15, 60, 75, 0.78);
+    margin: 0 0 16px 0;
+  }
+  .improvet-lp .founders-text p:last-child { margin-bottom: 0; }
+  .improvet-lp .founders-text strong { color: #0F3C4B; font-weight: 600; }
+  /* Assinatura — nomes lado a lado como byline editorial */
+  .improvet-lp .founders-signature {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    align-items: start;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .improvet-lp .founders-signature-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 60px;
+    background: linear-gradient(180deg,
+      rgba(162, 125, 22, 0.45) 0%,
+      rgba(162, 125, 22, 0.15) 70%,
+      transparent 100%);
+  }
+  .improvet-lp .founders-credential { display: flex; flex-direction: column; }
+  .improvet-lp .founders-credential-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #0F3C4B;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+  .improvet-lp .founders-credential-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #A27D16;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .improvet-lp .founders-credential ul { list-style: none; padding: 0; margin: 0; }
+  .improvet-lp .founders-credential li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgba(15, 60, 75, 0.72);
+    padding: 4px 0;
+    white-space: nowrap;
+  }
+  .improvet-lp .founders-credential li + li {
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(162, 125, 22, 0.4) 0%, rgba(162, 125, 22, 0.1) 70%, transparent 100%) 1;
+    margin-top: 4px;
+    padding-top: 8px;
+  }
+  /* Divisor dourado fino antes do CTA */
+  .improvet-lp .founders-cta-divider {
+    width: 100%;
+    max-width: 540px;
+    height: 1px;
+    background: linear-gradient(90deg,
+      rgba(162, 125, 22, 0.5) 0%,
+      rgba(162, 125, 22, 0.15) 60%,
+      transparent 100%);
+    margin: 0 0 32px 0;
+  }
+  /* CTA */
+  .improvet-lp .founders-cta {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3);
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    width: fit-content;
+  }
+  .improvet-lp .founders-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%);
+    animation: ilp-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .improvet-lp .founders-cta > * { position: relative; z-index: 1; }
+  .improvet-lp .founders-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(207, 175, 89, 0.45);
+  }
+  .improvet-lp .founders-cta svg { flex-shrink: 0; color: #0F3C4B; }
+  /* Fade dourado → footer */
+  .improvet-lp .founders-section + footer { position: relative; }
+  .improvet-lp .founders-section + footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(207, 175, 89, 0.4) 50%,
+      transparent 100%);
+  }
+  /* Responsivo */
+  @media (max-width: 1024px) {
+    .improvet-lp .founders-container { grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .improvet-lp .founders-content-col { padding: 72px 40px; }
+    .improvet-lp .founders-watermark { font-size: clamp(180px, 32vw, 320px); right: -3vw; }
+  }
+  @media (max-width: 768px) {
+    .improvet-lp .founders-container { grid-template-columns: 1fr; min-height: auto; }
+    .improvet-lp .founders-photo-col { padding: 56px 24px 0; min-height: 420px; }
+    .improvet-lp .founders-photo-wrapper img { max-height: 460px; }
+    .improvet-lp .founders-content-col { padding: 32px 24px 64px; }
+    .improvet-lp .founders-title { font-size: 28px; }
+    .improvet-lp .founders-text p { font-size: 14.5px; }
+    .improvet-lp .founders-signature {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .improvet-lp .founders-signature-divider {
+      width: 100%;
+      height: 1px;
+      min-height: 0;
+      background: linear-gradient(90deg,
+        rgba(162, 125, 22, 0.4) 0%,
+        rgba(162, 125, 22, 0.15) 70%,
+        transparent 100%);
+    }
+    .improvet-lp .founders-credential-name { font-size: 20px; }
+    .improvet-lp .founders-cta { padding: 16px 28px; font-size: 14px; }
+    .improvet-lp .founders-watermark { font-size: 180px; top: 30%; }
+  }
+
+  /* ========== FOOTER ========== */
+  .improvet-lp footer {
+    background: var(--preto-suave);
+    color: rgba(236, 228, 219, 0.5);
+    padding: 18px 0;
+    text-align: center;
+    font-size: 11px;
+  }
+  .improvet-lp footer .logo {
+    font-size: 12px;
+    letter-spacing: 4px;
+    display: inline-block;
+    margin-right: 12px;
+    color: rgba(236, 228, 219, 0.7);
+  }
+  .improvet-lp footer .copy {
+    font-size: 11px;
+    color: rgba(236, 228, 219, 0.4);
+    display: inline-block;
+    margin: 0;
+  }
+
+  /* ========== RESPONSIVO ========== */
+  @media (max-width: 980px) {
+    .improvet-lp .qs-grid, .improvet-lp .sessao-grid { grid-template-columns: 1fr; gap: 50px; }
+    .improvet-lp .logo-fallback-circle { width: 36px; height: 36px; font-size: 18px; }
+    .improvet-lp .logo-fallback-text .l1, .improvet-lp .logo-fallback-text .l2 { font-size: 18px; }
+    .improvet-lp .qs-imagem-wrap { max-width: 380px; margin: 0 auto; }
+    .improvet-lp .quotes-grid, .improvet-lp .reframe-grid, .improvet-lp .pq-grid { grid-template-columns: 1fr; gap: 16px; }
+    .improvet-lp .reframe-grid { gap: 24px; }
+    .improvet-lp .reframe-divider { display: none; }
+    .improvet-lp .metodo-grid { grid-template-columns: 1fr; gap: 20px; }
+    .improvet-lp .prova-numeros { grid-template-columns: 1fr; }
+    .improvet-lp .prova-num { border-right: none; border-bottom: 1px solid rgba(15, 60, 75, 0.08); }
+    .improvet-lp .prova-num:last-child { border-bottom: none; }
+    .improvet-lp .sessao-card-body { padding: 30px 24px; }
+    .improvet-lp .sessao-card-cta { padding: 24px; }
+    .improvet-lp .pq-col { padding: 36px 28px; }
+    .improvet-lp .espelho-fecho-content { grid-template-columns: 1fr; gap: 20px; }
+    .improvet-lp .container, .improvet-lp .container-narrow { padding: 0 24px; }
+    .improvet-lp .qs-imagem-card { right: 50%; top: -30px; transform: translateX(50%); }
+    .improvet-lp .metodo::before { display: none; }
+  }
+  @media (max-width: 600px) {
+    .improvet-lp .titulo-secao { font-size: 30px; }
+    .improvet-lp .espelho, .improvet-lp .reframe, .improvet-lp .quem-somos, .improvet-lp .metodo, .improvet-lp .sessao, .improvet-lp .prova, .improvet-lp .para-quem, .improvet-lp .faq, .improvet-lp .cta-final {
+      padding: 80px 0;
+    }
+    .improvet-lp .btn-primary { padding: 18px 28px; font-size: 15px; width: 100%; justify-content: center; }
+    .improvet-lp .espelho-fecho { padding: 36px 28px; }
+    .improvet-lp .qs-imagem-card { display: none; }
+  }
+
+  /* ============================================================
+     ============== REFINAMENTOS MOBILE (responsivo) =============
+     ============================================================ */
+  /* Previne scroll horizontal em todas as telas */
+  @media (max-width: 1024px) {
+    .improvet-lp { overflow-x: hidden; }
+  }
+
+  /* ===== MOBILE GRANDE (≤600px) ===== */
+  @media (max-width: 600px) {
+
+    /* FAIXA DE CREDIBILIDADE — loop horizontal infinito (marquee premium) */
+    .improvet-lp .faixa-cred {
+      overflow: hidden;
+      position: relative;
+      padding: 16px 0;
+      width: 100%;
+    }
+    .improvet-lp .faixa-cred .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 48px;
+      width: max-content;
+      max-width: none;
+      padding: 0 24px;
+      flex-wrap: nowrap;
+      animation: ilp-credentials-scroll 18s linear infinite;
+    }
+    .improvet-lp .cred-item {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0;
+      border: none;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1;
+      color: rgba(236, 228, 219, 0.85);
+      letter-spacing: 0;
+    }
+    .improvet-lp .cred-item svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: #CFAF59;
+      stroke-width: 1.6;
+      opacity: 1;
+    }
+
+    /* DOBRA 2 - PAIN */
+    .improvet-lp .pain-section { padding: 56px 20px 40px; }
+    .improvet-lp .pain-title { font-size: 30px; line-height: 1.2; margin-bottom: 40px; }
+    .improvet-lp .pain-grid { grid-template-columns: 1fr; gap: 14px; max-width: 100%; }
+    .improvet-lp .pain-card { padding: 24px 22px; min-height: auto; }
+    .improvet-lp .pain-card p { font-size: 14px; line-height: 1.6; }
+    .improvet-lp .pain-cta-wrapper { margin-top: 48px; }
+    .improvet-lp .pain-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 3 - HOW */
+    .improvet-lp .how-section { padding: 32px 14px 48px; }
+    .improvet-lp .how-header { margin-bottom: 32px; }
+    .improvet-lp .how-eyebrow { margin-bottom: 14px; }
+    .improvet-lp .how-title { font-size: 28px; line-height: 1.25; margin-bottom: 14px; text-wrap: pretty; padding: 0 8px; }
+    .improvet-lp .how-title br { display: none; }
+    .improvet-lp .how-subtitle { font-size: 14.5px; line-height: 1.5; padding: 0 4px; }
+    .improvet-lp .how-cards { grid-template-columns: 1fr; gap: 14px; max-width: 100%; margin-bottom: 0; }
+    .improvet-lp .how-card { padding: 22px 20px; }
+    .improvet-lp .how-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .improvet-lp .how-card p { font-size: 14px; line-height: 1.55; }
+    .improvet-lp .how-card .how-card-number { margin-bottom: 6px; }
+    .improvet-lp .how-cta-wrapper { margin-top: 32px; }
+    .improvet-lp .how-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 4 - DEPOIMENTOS */
+    .improvet-lp .testimonials-section { padding: 56px 0; }
+    .improvet-lp .testimonials-container { padding: 0 8px; }
+    .improvet-lp .testimonials-header { margin-bottom: 32px; padding: 0 12px; }
+    .improvet-lp .testimonials-title { font-size: 28px; line-height: 1.25; }
+    .improvet-lp .testimonials-subtitle { font-size: 15px; padding: 0 4px; line-height: 1.5; }
+    .improvet-lp .testimonials-carousel-wrapper { gap: 0; }
+    .improvet-lp .carousel-arrow { width: 30px; height: 30px; }
+    .improvet-lp .carousel-arrow svg { width: 14px; height: 14px; }
+    .improvet-lp .testimonials-carousel { gap: 8px; padding: 4px 2px; }
+    .improvet-lp .testimonial-card { flex: 0 0 calc(100% - 4px); border-radius: 14px; }
+    .improvet-lp .testimonial-image { border-radius: 14px; }
+    .improvet-lp .testimonials-dots { margin-top: 20px; }
+    .improvet-lp .testimonials-cta-wrapper { margin-top: 32px; padding: 0 16px; }
+    .improvet-lp .testimonials-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+
+    /* DOBRA 5 - FUNDADORES — imagem vai pro FINAL no mobile */
+    .improvet-lp .founders-container { padding: 0; min-height: auto; display: flex; flex-direction: column; }
+    .improvet-lp .founders-content-col { order: 1; padding: 56px 24px 0; max-width: 100%; }
+    .improvet-lp .founders-photo-col { order: 2; padding: 0 24px 56px; min-height: auto; }
+    .improvet-lp .founders-photo-wrapper img { max-height: 460px; }
+    .improvet-lp .founders-title { font-size: 26px; line-height: 1.25; }
+    .improvet-lp .founders-attribution { font-size: 14px; margin-bottom: 28px; }
+    .improvet-lp .founders-text { margin-bottom: 28px; }
+    .improvet-lp .founders-text p { font-size: 14px; line-height: 1.7; }
+    .improvet-lp .founders-signature { margin-bottom: 28px; gap: 20px; }
+    .improvet-lp .founders-credential-name { font-size: 18px; }
+    .improvet-lp .founders-credential-role { font-size: 10px; }
+    .improvet-lp .founders-credential li { font-size: 12.5px; white-space: normal; }
+    .improvet-lp .founders-cta-divider { margin-bottom: 24px; }
+    .improvet-lp .founders-cta { padding: 18px 32px; font-size: 14px; width: 100%; justify-content: center; }
+    .improvet-lp .founders-watermark { font-size: 160px; right: -8vw; top: 35%; }
+
+    /* FOOTER */
+    .improvet-lp footer { padding: 14px 16px; }
+    .improvet-lp footer .logo { display: block; margin: 0 0 4px 0; }
+    .improvet-lp footer .copy { display: block; }
+  }
+
+  /* ===== MOBILE PADRÃO (≤480px) ===== */
+  @media (max-width: 480px) {
+    .improvet-lp .pain-title, .improvet-lp .how-title, .improvet-lp .testimonials-title, .improvet-lp .founders-title { font-size: 26px; }
+    .improvet-lp .pain-card { padding: 22px 18px; }
+    .improvet-lp .how-card { padding: 24px 20px; }
+    .improvet-lp .founders-content-col { padding: 20px 20px 0; }
+    .improvet-lp .founders-photo-col { padding: 0 20px 0; }
+    .improvet-lp .founders-watermark { font-size: 130px; right: -10vw; }
+    /* Ícones e elementos decorativos menores */
+    .improvet-lp .how-card-number { font-size: 10px; }
+    .improvet-lp .testimonials-carousel { padding: 4px 2px; }
+  }
+
+  /* ===== MOBILE PEQUENO (≤360px) ===== */
+  @media (max-width: 360px) {
+    .improvet-lp .pain-section { padding: 48px 16px 32px; }
+    .improvet-lp .how-section { padding: 32px 16px 56px; }
+    .improvet-lp .testimonials-container { padding: 0 12px; }
+    .improvet-lp .founders-photo-col { padding: 0 16px 0; min-height: 300px; }
+    .improvet-lp .founders-content-col { padding: 16px 16px 0; }
+    .improvet-lp .pain-title, .improvet-lp .how-title, .improvet-lp .testimonials-title, .improvet-lp .founders-title { font-size: 23px; }
+    .improvet-lp .pain-card p, .improvet-lp .how-card p, .improvet-lp .founders-text p { font-size: 13.5px; }
+    .improvet-lp .pain-cta, .improvet-lp .how-cta, .improvet-lp .testimonials-cta, .improvet-lp .founders-cta { padding: 16px 20px; font-size: 13px; }
+    .improvet-lp .carousel-arrow { width: 32px; height: 32px; }
+    .improvet-lp .carousel-arrow svg { width: 14px; height: 14px; }
+    .improvet-lp .founders-watermark { font-size: 100px; }
+  }
+  /* ========== HERO (cópia da primeira dobra de escolaimprovet.com.br/pagina-espera) ========== */
+  .improvet-lp .hero-espera {
+    position: relative;
+    background: #0A0A0A url('https://improvet-landing.vercel.app/export/assets/hero-bg-desktop.jpg') center / cover no-repeat;
+    padding: 28px 24px 24px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+  }
+  .improvet-lp .he-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 560px 576px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+  }
+  .improvet-lp .he-text { display: flex; flex-direction: column; }
+  .improvet-lp .he-logo { display: block; width: 184px; height: auto; margin: 0 auto 38px; }
+  .improvet-lp .he-selo { display: block; width: 178px; height: auto; margin: 0 0 14px; }
+  .improvet-lp .he-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  .improvet-lp .he-gold { color: #E7C863; }
+  .improvet-lp .he-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #F2F9FF;
+    max-width: 515px;
+    margin: 23px 0 0;
+  }
+  .improvet-lp .he-sub b { font-weight: 700; }
+  /* CTA — mesmo estilo dos demais botões da página (.pain-cta) */
+  .improvet-lp .he-cta {
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3);
+    transition: all 0.3s ease;
+  }
+  .improvet-lp .he-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+    animation: ilp-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .improvet-lp .he-cta > * { position: relative; z-index: 1; }
+  .improvet-lp .he-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(207, 175, 89, 0.45);
+  }
+  .improvet-lp .he-cta:focus-visible { outline: 2px solid #E5C977; outline-offset: 3px; }
+  .improvet-lp .he-cta svg { flex-shrink: 0; color: #0F3C4B; }
+  .improvet-lp .he-photo img { display: block; width: 576px; max-width: 100%; height: auto; }
+
+  /* Tablet — empilha, mantém fundo do desktop */
+  @media (max-width: 1180px) {
+    .improvet-lp .he-inner { grid-template-columns: minmax(0, 560px); row-gap: 24px; }
+    .improvet-lp .he-photo { display: flex; justify-content: center; }
+  }
+
+  /* Mobile — igual à versão mobile da página de espera */
+  @media (max-width: 479px) {
+    .improvet-lp .hero-espera {
+      background-image: url('https://improvet-landing.vercel.app/export/assets/hero-bg-mobile.jpg');
+      padding: 28px 20px 0;
+    }
+    .improvet-lp .he-text { align-items: center; text-align: center; }
+    .improvet-lp .he-logo { width: 154px; margin-bottom: 34px; }
+    .improvet-lp .he-selo { width: 168px; margin: 0 auto 14px; }
+    .improvet-lp .he-title, .improvet-lp .he-sub { font-family: 'Inter Tight', 'Poppins', sans-serif; text-align: center; }
+    .improvet-lp .he-title { font-size: 29px; line-height: 31px; margin-top: 8px; }
+    .improvet-lp .he-sub { font-size: 15px; line-height: 20px; font-weight: 500; margin-top: 18px; max-width: none; padding: 0 8px; }
+    .improvet-lp .he-cta { align-self: center; justify-content: center; margin-top: 26px; padding: 17px 22px; font-size: 12.5px; gap: 8px; letter-spacing: 0.02em; }
+    .improvet-lp .he-cta svg { width: 14px; height: 14px; }
+    .improvet-lp .he-inner { row-gap: 16px; }
+    .improvet-lp .he-photo img { width: 378px; }
+  }
+  .improvet-lp { width: 100%; }
+</style>
+<style>html, body { margin: 0; padding: 0; }</style>
+</head>
+<body>
+<div class="improvet-lp">
+<!-- HERO -->
+<section class="hero-espera">
+  <div class="he-inner">
+    <div class="he-text">
+      <img class="he-logo" src="https://improvet-landing.vercel.app/export/assets/hero-logo-improvet.png" alt="Improvet" width="184" height="70">
+      <img class="he-selo" src="https://improvet-landing.vercel.app/export/assets/hero-selo-metodo-avef.png" alt="Método AVEF • Improvet" width="178" height="27">
+
+      <h1 class="he-title">
+        Transforme seu conhecimento técnico na <span class="he-gold">primeira opção das clínicas/responsáveis</span> sem precisar cobrar mais barato.
+      </h1>
+
+      <p class="he-sub">
+        Candidate-se a uma <b>Sessão Diagnóstica gratuita</b> e descubra o que precisa ser ajustado para seu serviço gerar mais reconhecimento, preferência e renda de acordo com a fase em que você está.
+      </p>
+
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="he-cta">
+        <span>Quero me candidatar gratuitamente</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="he-photo">
+      <img src="https://improvet-landing.vercel.app/export/assets/hero-fundadores-mec.webp" alt="Fundadores da Improvet — certificado reconhecido pelo MEC" width="576" height="576">
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA DE CREDIBILIDADE -->
+<div class="faixa-cred">
+  <div class="container">
+    <div class="cred-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Única Escola de Negócios para Vets Especialistas do Brasil
+    </div>
+    <div class="cred-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Método validado por +1057 alunos
+    </div>
+    <div class="cred-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      Certificado reconhecido pelo MEC
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO 2 - IDENTIFICAÇÃO COM A DOR -->
+<section class="pain-section">
+  <div class="pain-container">
+    <h2 class="pain-title">Esta análise é para você, que atua com <em>especialidades</em> ou está à frente de uma <em>empresa</em> no mercado veterinário:</h2>
+
+    <div class="pain-grid">
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <p>“Minha agenda ainda não mantém um número constante de consultas, procedimentos ou exames.”</p>
+      </article>
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>
+        <p>“Tenho receio de reajustar meus preços e perder clínicas parceiras ou responsáveis pelos animais para quem cobra menos.”</p>
+      </article>
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <p>“Vejo profissionais com menos experiência sendo mais lembrados e escolhidos. Não entendo por que meu trabalho ainda não é reconhecido.”</p>
+      </article>
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <p>“A maior parte dos meus clientes chega por indicação. Quando as indicações diminuem, minha agenda e minha renda também caem.”</p>
+      </article>
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <p>“Quero diminuir o ritmo e ter mais tempo com a família, mas minha renda ainda depende diretamente da quantidade de atendimentos que faço.”</p>
+      </article>
+      <article class="pain-card">
+        <svg class="pain-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
+        <p>“Minha empresa cresceu, mas ainda faltam profissionais, processos e organização para manter a qualidade sem depender de mim para tudo.”</p>
+      </article>
+    </div>
+
+    <div class="pain-cta-wrapper">
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="pain-cta">
+        <span>Verificar disponibilidade</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3 - COMO FUNCIONA O DIAGNÓSTICO (TIMELINE VERTICAL) -->
+<section class="how-section">
+  <div class="how-container">
+
+    <div class="how-header">
+      <span class="how-eyebrow">Como funciona o diagnóstico</span>
+      <h2 class="how-title">
+        Em 3 etapas, você sai com <em>clareza</em><br>
+        do próximo passo do seu negócio.
+      </h2>
+      <p class="how-subtitle">
+        Uma análise estratégica conduzida pessoalmente pela nossa equipe. Você não recebe um pacote pronto, recebe um caminho desenhado pra sua realidade.
+      </p>
+    </div>
+
+    <div class="how-cards">
+
+      <div class="how-card" data-step="01">
+        <span class="how-card-grid" aria-hidden="true"></span>
+        <span class="how-card-accent" aria-hidden="true"></span>
+        <span class="how-card-shimmer" aria-hidden="true"></span>
+        <div class="how-card-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="13" fill="#CFAF59" fill-opacity="0.15"/>
+            <circle cx="16" cy="16" r="13" stroke="#A27D16" stroke-width="1.5"/>
+            <path d="M16 6L19 16L16 26L13 16L16 6Z" fill="#A27D16" fill-opacity="0.3" stroke="#A27D16" stroke-width="1.2" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="1.8" fill="#A27D16"/>
+            <line x1="16" y1="3" x2="16" y2="5" stroke="#A27D16" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="how-card-number">01</span>
+        <h3>Clareza da sua <em>fase</em></h3>
+        <p>Vamos entender em qual momento do mercado veterinário você está hoje: iniciando na especialidade, buscando aumentar o número de atendimentos ou exames, organizando uma equipe ou enfrentando as dificuldades que vieram com o crescimento da empresa.</p>
+      </div>
+
+      <div class="how-card" data-step="02">
+        <span class="how-card-grid" aria-hidden="true"></span>
+        <span class="how-card-accent" aria-hidden="true"></span>
+        <span class="how-card-shimmer" aria-hidden="true"></span>
+        <div class="how-card-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+            <circle cx="13.5" cy="13.5" r="8" fill="#CFAF59" fill-opacity="0.15"/>
+            <circle cx="13.5" cy="13.5" r="8" stroke="#A27D16" stroke-width="1.5"/>
+            <circle cx="13.5" cy="13.5" r="3.5" stroke="#A27D16" stroke-width="1.2" fill="#A27D16" fill-opacity="0.2"/>
+            <line x1="19.5" y1="19.5" x2="26" y2="26" stroke="#A27D16" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="how-card-number">02</span>
+        <h3>Identificação das <em>dificuldades</em></h3>
+        <p>Vamos identificar o que está prejudicando seus resultados: poucos atendimentos ou exames, dificuldade para conquistar clínicas parceiras ou responsáveis pelos animais, preços pouco valorizados, sobrecarga de trabalho, falta de equipe, processos desorganizados ou pouco controle financeiro.</p>
+      </div>
+
+      <div class="how-card" data-step="03">
+        <span class="how-card-grid" aria-hidden="true"></span>
+        <span class="how-card-accent" aria-hidden="true"></span>
+        <span class="how-card-shimmer" aria-hidden="true"></span>
+        <div class="how-card-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+            <path d="M4 24L11 17L15.5 20.5L26 10" stroke="#A27D16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 10H26V16" stroke="#A27D16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="17" r="2.5" fill="#A27D16" fill-opacity="0.3" stroke="#A27D16" stroke-width="1.2"/>
+            <circle cx="15.5" cy="20.5" r="2.5" fill="#A27D16" fill-opacity="0.3" stroke="#A27D16" stroke-width="1.2"/>
+            <circle cx="26" cy="10" r="2.5" fill="#A27D16" fill-opacity="0.3" stroke="#A27D16" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <span class="how-card-number">03</span>
+        <h3>Definição dos <em>próximos passos</em></h3>
+        <p>Com base nessa análise, vamos definir ações para tornar seu trabalho mais organizado, valorizado e rentável no mercado veterinário — desde a conquista dos primeiros clientes até a organização de equipes, processos e unidades.</p>
+      </div>
+
+    </div>
+
+    <div class="how-cta-wrapper">
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="how-cta">
+        <span>Quero agendar agora</span>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9h12M15 9l-5-5M15 9l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 3.5 - DEPOIMENTOS (CARROSSEL DE PRINTS REAIS) -->
+<section class="testimonials-section">
+  <div class="testimonials-container">
+
+    <div class="testimonials-header">
+      <h2 class="testimonials-title">
+        Veterinários que já saíram do <em>mesmo lugar</em> que você está hoje.
+      </h2>
+      <p class="testimonials-subtitle">
+        Mensagens reais de alunos que aplicaram o método e transformaram suas carreiras. Sem edição, sem ator, sem promessa vazia.
+      </p>
+    </div>
+
+    <div class="testimonials-carousel-wrapper">
+
+      <button class="carousel-arrow carousel-arrow-prev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="testimonials-carousel">
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-bruna-panini.jpg" alt="Depoimento de Bruna Panini, aluna T07">
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-aluna-t07.jpg" alt="Depoimento aluna T07 — faturamento e laudos">
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-carla-berft.jpg" alt="Depoimento de Carla Berft, aluna T08">
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-conquista-volante.jpg" alt="Depoimento de conquista do primeiro mês sozinha">
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-kris-aluno.jpg" alt="Conversa Kris Kondo com aluno — primeiro mês como volante">
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="https://improvet-landing.vercel.app/export/assets/depoimento-dobrar-faturamento.jpg" alt="Depoimento dobrei meu faturamento após mentoria">
+          </div>
+        </article>
+
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-next" aria-label="Próximo">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <div class="testimonials-dots" id="testimonialsDots"></div>
+
+    <div class="testimonials-cta-wrapper">
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="testimonials-cta">
+        <span>Quero ser selecionado</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 4 - EXPERT / FUNDADORES (EDITORIAL) -->
+<section class="founders-section">
+  <span class="founders-watermark" aria-hidden="true">2019</span>
+
+  <div class="founders-container">
+
+    <div class="founders-photo-col">
+      <div class="founders-photo-wrapper">
+        <div class="founders-photo-glow"></div>
+        <img src="https://improvet-landing.vercel.app/export/assets/fundadores-improvet-transparente.webp" alt="Kris e Vicente Kondo, fundadores da Improvet">
+      </div>
+    </div>
+
+    <div class="founders-content-col">
+
+      <h2 class="founders-title">
+        Já passamos <em>exatamente</em> pelo que você está passando.
+      </h2>
+      <span class="founders-attribution">— Kris &amp; Vicente Kondo</span>
+
+      <div class="founders-text">
+        <p>Um casal de veterinários com o mesmo sonho: provar que dá pra ser <strong>valorizado, ter qualidade de vida e estabilidade financeira</strong> na medicina veterinária.</p>
+        <p>Em 2019 fundamos a Improvet, a <strong>única Escola de Negócios para veterinários especialistas do Brasil</strong>. Desde então, mais de <strong>1.157 profissionais</strong> passaram pelo nosso <strong>Método AEF</strong> — Atrair, Encantar, Fidelizar.</p>
+      </div>
+
+      <div class="founders-signature">
+
+        <div class="founders-credential">
+          <span class="founders-credential-name">Vicente Kondo</span>
+          <span class="founders-credential-role">Radiologista · Co-fundador</span>
+          <ul>
+            <li>+18 anos no diagnóstico por imagem</li>
+            <li>Secretário da ABR Veterinária</li>
+            <li>Mentor de +600 negócios</li>
+          </ul>
+        </div>
+
+        <div class="founders-signature-divider" aria-hidden="true"></div>
+
+        <div class="founders-credential">
+          <span class="founders-credential-name">Kris Kondo</span>
+          <span class="founders-credential-role">Veterinária · Co-fundadora</span>
+          <ul>
+            <li>Mestre em Morfofisiologia (UFV)</li>
+            <li>+8 anos docente universitária</li>
+            <li>Especialista em marketing vet</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="founders-cta-divider" aria-hidden="true"></div>
+
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="founders-cta">
+        <span>Quero uma vaga agora</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <span class="logo">IMPROVET</span>
+    <p class="copy">© 2026 Improvet. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</div>
+
+<script>
+  // Animações ao scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-stagger, .pain-card').forEach(el => observer.observe(el));
+
+  // Observer separado pra how-section (usa classe 'in-view' em vez de 'visible')
+  const howSection = document.querySelector('.how-section');
+  if (howSection) {
+    const howObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.1 });
+    howObserver.observe(howSection);
+  }
+
+  // Carrossel de depoimentos
+  (function() {
+    const carousel = document.querySelector('.testimonials-carousel');
+    const prevBtn = document.querySelector('.carousel-arrow-prev');
+    const nextBtn = document.querySelector('.carousel-arrow-next');
+    const dotsContainer = document.getElementById('testimonialsDots');
+    if (!carousel || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    const cards = carousel.querySelectorAll('.testimonial-card');
+    const totalCards = cards.length;
+
+    function getVisibleCards() {
+      const w = window.innerWidth;
+      if (w <= 768) return 1;
+      if (w <= 1024) return 2;
+      return 3;
+    }
+    function getCardWidth() {
+      if (cards.length === 0) return 0;
+      const gap = parseInt(getComputedStyle(carousel).gap) || 24;
+      return cards[0].offsetWidth + gap;
+    }
+    function createDots() {
+      const visible = getVisibleCards();
+      const totalDots = Math.max(1, Math.ceil(totalCards / visible));
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('testimonial-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+    function goToSlide(index) {
+      const visible = getVisibleCards();
+      const scrollAmount = index * visible * getCardWidth();
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+    function updateDots() {
+      const visible = getVisibleCards();
+      const cardWidth = getCardWidth();
+      if (cardWidth === 0) return;
+      const currentIndex = Math.round(carousel.scrollLeft / (cardWidth * visible));
+      const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -getCardWidth() * getVisibleCards(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: getCardWidth() * getVisibleCards(), behavior: 'smooth' });
+    });
+    carousel.addEventListener('scroll', () => {
+      clearTimeout(carousel._scrollTimeout);
+      carousel._scrollTimeout = setTimeout(updateDots, 100);
+    });
+    window.addEventListener('resize', createDots);
+
+    createDots();
+  })();
+
+  // Duplica itens da faixa de credibilidade para loop infinito perfeito em mobile
+  (function() {
+    function setupCredentialsLoop() {
+      const container = document.querySelector('.faixa-cred .container');
+      if (!container) return;
+      if (container.dataset.duplicated === 'true') return;
+      if (window.innerWidth > 768) return;
+      const items = Array.from(container.querySelectorAll('.cred-item'));
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        container.appendChild(clone);
+      });
+      container.dataset.duplicated = 'true';
+    }
+    window.addEventListener('DOMContentLoaded', setupCredentialsLoop);
+    setupCredentialsLoop();
+    window.addEventListener('resize', setupCredentialsLoop);
+  })();
+
+  // Repassa UTMs e demais parâmetros da URL da página para os links do Typebot
+  (function() {
+    var qs = window.location.search.replace(/^\?/, '');
+    if (!qs) return;
+    document.querySelectorAll('.improvet-lp a[href*="typebot.co"]').forEach(function(a) {
+      a.href = a.href + (a.href.indexOf('?') > -1 ? '&' : '?') + qs;
+    });
+  })();
+</script>
+
+
+</body>
+</html>
