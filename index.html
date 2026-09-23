@@ -2057,30 +2057,46 @@
     margin: 23px 0 0;
   }
   .he-sub b { font-weight: 700; }
+  /* CTA — mesmo estilo dos demais botões da página (.pain-cta) */
   .he-cta {
-    display: block;
-    margin-top: 26px;
-    padding: 11px 16px;
-    background: linear-gradient(to right, #C09A2A, #DCC066);
-    color: #000000;
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 20px 52px;
+    background: linear-gradient(135deg, #CFAF59 0%, #A27D16 100%);
+    color: #0F3C4B;
     font-family: 'Poppins', sans-serif;
-    font-size: 19px;
-    font-weight: 500;
-    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 12px;
     text-decoration: none;
-    border-radius: 10px;
-    transition: filter 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 10px 30px rgba(207, 175, 89, 0.3);
+    transition: all 0.3s ease;
   }
-  .he-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
-  .he-cta:focus-visible { outline: 2px solid #E7C863; outline-offset: 3px; }
-  .he-note {
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    line-height: 23px;
-    color: #FFFFFF;
-    text-align: center;
-    margin: 10px 0 0;
+  .he-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+    animation: shimmer 4s ease-in-out infinite;
+    pointer-events: none;
   }
+  .he-cta > * { position: relative; z-index: 1; }
+  .he-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(207, 175, 89, 0.45);
+  }
+  .he-cta:focus-visible { outline: 2px solid #E5C977; outline-offset: 3px; }
+  .he-cta svg { flex-shrink: 0; color: #0F3C4B; }
   .he-photo img { display: block; width: 576px; max-width: 100%; height: auto; }
 
   /* Tablet — empilha, mantém fundo do desktop */
@@ -2101,8 +2117,8 @@
     .he-title, .he-sub { font-family: 'Inter Tight', 'Poppins', sans-serif; text-align: center; }
     .he-title { font-size: 29px; line-height: 31px; margin-top: 8px; }
     .he-sub { font-size: 15px; line-height: 20px; font-weight: 500; margin-top: 18px; max-width: none; padding: 0 8px; }
-    .he-cta { width: 100%; margin-top: 28px; font-size: 16px; padding: 16px 48px; border-radius: 22px; }
-    .he-note { font-size: 9px; line-height: 24px; margin-top: 6px; }
+    .he-cta { align-self: center; justify-content: center; margin-top: 26px; padding: 17px 22px; font-size: 12.5px; gap: 8px; letter-spacing: 0.02em; }
+    .he-cta svg { width: 14px; height: 14px; }
     .he-inner { row-gap: 16px; }
     .he-photo img { width: 378px; }
   }
@@ -2118,16 +2134,17 @@
       <img class="he-selo" src="images/hero-selo-metodo-avef.png" alt="Método AVEF • Improvet" width="178" height="27">
 
       <h1 class="he-title">
-        Transforme seu conhecimento técnico na <span class="he-gold">primeira opção das clínicas/responsáveis</span> - sem precisar cobrar mais barato.
+        Transforme seu conhecimento técnico na <span class="he-gold">primeira opção das clínicas/responsáveis</span> sem precisar cobrar mais barato.
       </h1>
 
       <p class="he-sub">
-        Candidate-se a uma <b>Sessão Diagnóstica gratuita</b> e descubra o que precisa ser ajustado para seu serviço gerar mais reconhecimento, preferência e renda - de acordo com a fase em que você está.
+        Candidate-se a uma <b>Sessão Diagnóstica gratuita</b> e descubra o que precisa ser ajustado para seu serviço gerar mais reconhecimento, preferência e renda de acordo com a fase em que você está.
       </p>
 
-      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="he-cta">Quero me candidatar gratuitamente</a>
-
-      <p class="he-note">Sessão individual e gratuita • Candidatura sujeita à análise de perfil</p>
+      <a href="https://typebot.co/formul-rio-leads-7lc0byu" target="_blank" rel="noopener noreferrer" class="he-cta">
+        <span>Quero me candidatar gratuitamente</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
     </div>
 
     <div class="he-photo">
